@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for bodyWork in bodyWorks %}
+        <h3>{{ bodyWork.name }}</h3>
+        <p>{{ bodyWork.description }}</p>
+        <div>
+            Avant
+            {% for imageBefore in bodyWork.befores %}
+                <img src="{{ asset(imageBefore.pathImage) }}" width="100"/>
+            {% endfor %}
+        </div>
+        <div>
+            Après 
+            {% for imageAfter in bodyWork.afters %}
+                <img src="{{ asset(imageAfter.pathImage) }}" width="100"/>
+            {% endfor %}
+        </div>
+
+    {% endfor %}
+{% endblock %}
