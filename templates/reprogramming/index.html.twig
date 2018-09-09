@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reprogrammation</h1>
+
+    <h3>Choisissez votre marque</h3>
+    {% for brand in brands %}
+        <a href="{{ path('reprogramming_model', {'id': brand.id}) }}" class="col-1">
+            {% if brand.logoName is not null %}
+                <img src="{{ brand.pathLogo }}" width=75>
+            {% else %}
+                {{brand.name}}
+            {% endif %}
+        </a>
+        
+    {% endfor %}
+{% endblock %}

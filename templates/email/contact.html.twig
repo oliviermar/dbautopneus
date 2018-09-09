@@ -1,0 +1,11 @@
+<h1>Demande d'information</h1>
+
+<p>
+    Bonjour David! <br />
+    Vous avez reçu un message via la formulaire de contact de <a href="#">DB Auto Pneus</a> <br />
+    {{contact.name}} {% if contact.phone is not null %} - {{contact.phone}} {%endif%} vous a adressez un message, le voici: <br /><br />
+    
+    <i>{{contact.content}} </i>
+</p>
+
+<b>Bonne journée</b>

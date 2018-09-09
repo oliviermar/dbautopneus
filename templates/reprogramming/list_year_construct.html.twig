@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul class="breadcrumb">
+        <li><a href="{{ path('reprogramming_index') }}">{{ model.brand }}</a></li>
+        <li><a href="{{ path('reprogramming_model', {'id': model.id}) }}">{{ model }}</a></li>
+    </ul>
+
+    <h2 class="title2 aligncenter">Choisissez l'année de votre modèle</h2>
+    
+    <div class="block-model col-4 radius-10">
+        <h3 class="aligncenter background-black radius-10 sizel">{{ model }}</h3>
+        <ul>
+            {% for yearConstruct in yearsConstruct %}
+                <li class="model-list">
+                    <a href=" {{ path('reprogramming_engine', {'id': yearConstruct.id}) }}">{{ yearConstruct }}</a> <br>
+                </li>
+                
+                {% if not loop.last %} <hr /> {% endif %}
+            {% else %}
+                <li class="model-list"><a href="#">Aucune année disponible actuellement</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

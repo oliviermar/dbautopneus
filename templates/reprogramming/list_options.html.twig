@@ -1,0 +1,15 @@
+<h3>Options supplémentaires:</h3>
+<ul>
+    {% for option in options %}
+        <li>
+            <h4>{{option.name}} - {{option.price}}</h4>
+            <p> {{option.description}} </p>
+            {% for promotion in option.currentlyPromotions %}
+                <h5> {{ promotion.title }} </h5>
+                <small> {{ promotion.amount }} de réduction</small>
+            {% else %}
+                <div></div>
+            {% endfor %}
+        </li>    
+    {% endfor %}
+</ul>

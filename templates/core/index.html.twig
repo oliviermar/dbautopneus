@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="main-bg"></div>
+    <h1>DB Auto Pneus</h1>
+    <div>
+        <h2> Liste des promotions</h2>
+        {% for promotion in promotions %}
+            {{promotion.title}}
+            {{promotion.amount}} €
+        {% endfor %}
+    </div>
+{% endblock %}
