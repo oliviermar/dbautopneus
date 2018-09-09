@@ -180,7 +180,7 @@ h1 {
     /*background:url(../images/h1-bg.jpg) 0 0 no-repeat;*/
     font-size: 45px!important;
     text-align: center;
-    color: #b22300;    
+    color: #b22300;
 }
 h1 a {
 	display:block;
@@ -565,6 +565,17 @@ li.model-list a {
     font-weight:bold;
     text-align:center;
     line-height: 18px!important;
+}
+h1.bio-etha{
+	padding:45px 20px 37px 26px!important;
+    /*background:url(../images/h1-bg.jpg) 0 0 no-repeat;*/
+    font-size: 45px!important;
+    text-align: center;
+    color: #99CC00!important;
+}
+
+.link-bio{
+	color: #99CC00!important;
 }
 
 /**************** breadcrumb *********************/
