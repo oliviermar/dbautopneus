@@ -49,6 +49,11 @@ class Image
     private $bodyWorkBefore;
 
     /**
+     * @ORM\ManyToOne(targetEntity="MecanicFolio", inversedBy="images")
+     */
+    private $mecanic;
+
+    /**
      * Image ToString
      */
     public function __toString()
@@ -172,6 +177,26 @@ class Image
     public function setBodyWorkAfter(BodyWorkFolio $after = null)
     {
         $this->bodyWorkAfter = $after;
+
+        return $this;
+    }
+
+    /**
+     * @return MecanicFolio
+     */
+    public function getMecanic()
+    {
+        return $this->mecanic;
+    }
+
+    /**
+     * @param Mecanic $mecanic
+     *
+     * @return Image
+     */
+    public function setMecanic(MecanicFolio $mecanic = null)
+    {
+        $this->mecanic = $mecanic;
 
         return $this;
     }
