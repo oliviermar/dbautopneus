@@ -2,7 +2,7 @@
     <div class="footer">
         <div class="col-3">
             @copyright Db Auto Pneus  <br />
-            <a href="#"> Mentions légale</a>
+            <a href="{{ path("mentions_legales") }}"> Mentions légale</a>
         </div>
         <div class="col-3">
             {{ render(controller('App\\Controller\\CoreController::rate')) }}
