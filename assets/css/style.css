@@ -227,7 +227,7 @@ header nav {
 	font-size:18px;
 	line-height:25px;
 	padding:12px 28px 12px 29px;
-	color:#808080;
+	color:#D3D3D3;
 	text-transform:capitalize;
 }
 .menu > li:first-child > a {
@@ -236,7 +236,7 @@ header nav {
 	min-width:22px;
 }
 .menu li a.active, .menu > li > a:hover {
-	color:#fff;
+	color:#FFFF00;
 }
 .menu > li:first-child > a.active, .menu > li:first-child > a:hover {
 	background-position:center 15px;
