@@ -2,7 +2,7 @@
 .env
 /public/upload/
 /public/bundles/
-/public/build/*
+/public/build/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
