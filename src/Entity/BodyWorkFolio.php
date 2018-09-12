@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * class BodyWorkFolio
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\BodyWorkFolioRepository")
  * @author Olivier Maréchal <o.marechal@icloud.com>
  */
 class BodyWorkFolio
@@ -127,7 +127,7 @@ class BodyWorkFolio
     {
         if ($this->befores->contains($image)) {
             $this->befores->remove($image);
-            $image->setBodyWorkBefore();
+            $image->setBodyWorkBefore(null);
         }
 
         return $this;

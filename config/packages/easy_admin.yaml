@@ -1,4 +1,5 @@
 easy_admin:
+    site_name: 'Db Auto Pneus'
     formats:
         number: '%d'
     entities:
@@ -6,10 +7,12 @@ easy_admin:
           class: App\Entity\Brand
           label: 'Marque'
           list:
+            title: 'Marque'
             fields:
               - { property: 'name', label: 'Nom' }
               - { property: 'logoName', type: 'image', base_path: '%easy_admin_upload_dir%' }
           form:
+            title: 'Marque'
             fields:
               - { property: 'name', label: 'Nom' }
               - { property: 'logo', type: 'vich_image'}
@@ -18,10 +21,12 @@ easy_admin:
           class: App\Entity\CarModel
           label: 'Modèle'
           list:
+            title: 'Modèle'
             fields:
               - { property: 'name', label: 'Nom' }
               - { property: 'brand', label: 'Marque' }
           form:
+            title: 'Modèle'
             fields:
               - { property: 'name', label: 'Nom' }
               - { property: 'brand', label: 'Marque' }
@@ -30,12 +35,14 @@ easy_admin:
           class: App\Entity\YearConstruct
           label: 'Année de construction'
           form:
+            title: 'Année de construction'
             fields:
               - { property: 'name', label: 'Nom'}
               - { property: 'model', label: 'Modèle'}
               - { property: 'yearStart', label: 'Année de début de construction'}
               - { property: 'yearEnd', label: 'Année de fin de construction'}
           list:
+            title: 'Année de construction'
             fields:
               - { property: 'name', label: 'Nom'}
               - { property: 'model', label: 'Modèle'}
@@ -46,6 +53,7 @@ easy_admin:
           class: App\Entity\Engine
           label: 'Motorisation'
           list:
+            title: 'Motorisation'
             fields:
               - { property: 'name', label: 'Motorisation (ex: 1.9 TDI)'}
               - { property: 'originPower', label: 'Puissance origine'}
@@ -54,6 +62,7 @@ easy_admin:
               - { property: 'yearConstruct', label: 'Année de construction'}
               - { property: 'typeFuel', type: 'choice', choices: [!php/const App\Entity\Engine::TYPE_FUEL_GASOLINE, !php/const App\Entity\Engine::TYPE_FUEL_DIESEL ], label: 'Carburant'}
           form:
+            title: 'Motorisation'
             fields:
               - { property: 'name', label: 'Motorisation (ex: 1.9 TDI)'}
               - { property: 'originPower', label: 'Puissance origine'}
@@ -66,6 +75,7 @@ easy_admin:
           class: App\Entity\Promotion
           label: 'Promotion'
           list:
+            title: 'Promotion'
             fields:
               - { property: 'title', label: 'Titre'}
               - { property: 'amount', label: 'Montant'}
@@ -75,6 +85,7 @@ easy_admin:
               - { property: 'option', label: 'Option concernée par la promotion'}
               - { property: 'reprogrammation', label: 'Promotion reprogrammation'}
           form:
+            title: 'Promotion'
             fields:
               - { property: 'title', label: 'Titre'}
               - { property: 'type', type: 'choice', choices: [!php/const App\Entity\Promotion::TYPE_PERCENT, !php/const App\Entity\Promotion::TYPE_AMOUNT ], label: 'Type'}
@@ -86,12 +97,28 @@ easy_admin:
           class: App\Entity\BodyWorkFolio
           label: 'PortFolio Carrosserie'
           list:
+            title: 'Portfolio Carrosserie'
             fields:
               - { property: 'name', label: 'Titre'}
           form:
+            title: 'Portfolio Carrosserie'
             fields:
               - { property: 'name', label: 'Titre'}
               - { property: 'description', label: 'Description'}
               - { property: 'befores', type: 'collection', label: 'Avant', type_options: {entry_type: 'App\Form\ImageType', by_reference: false }}
               - { property: 'afters', type: 'collection', label: 'Après', type_options: {entry_type: 'App\Form\ImageType', by_reference: false }}
+
+        MecanicFolio:
+          class: App\Entity\MecanicFolio
+          label: 'PortFolio Mécanique'
+          list:
+            title: 'Portfolio Mécanique'
+            fields:
+              - { property: 'name', label: 'Titre'}
+          form:
+            title: 'Portfolio Mécanique'
+            fields:
+              - { property: 'name', label: 'Titre'}
+              - { property: 'description', label: 'Description'}
+              - { property: 'images', type: 'collection', label: 'Images', type_options: {entry_type: 'App\Form\ImageType', by_reference: false }}
 
