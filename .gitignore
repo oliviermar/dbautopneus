@@ -2,6 +2,7 @@
 .env
 /public/upload/
 /public/bundles/
+/public/build/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
@@ -12,5 +13,4 @@
 
 ###> symfony/webpack-encore-pack ###
 /node_modules/
-/%PUBLIC_DIR%/build/
 ###< symfony/webpack-encore-pack ###
