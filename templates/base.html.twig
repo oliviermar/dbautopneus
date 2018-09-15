@@ -36,9 +36,12 @@
         </div>
         {{ include('footer.html.twig') }}
         {{ include('core/modal.html.twig') }}
-        {% block javascripts %}{% endblock %}
         <script src="{{ asset('build/jquery.js') }}"></script>
         <script src="{{ asset('build/contact.js') }}"></script>
         <script src="{{ asset('build/rating.js') }}"></script>
+        <script src="{{ asset('build/tms.js') }}"></script>
+        <script src="{{ asset('build/presets.js') }}"></script>
+        <script src="{{ asset('build/jquery_easing.js') }}"></script>
+        {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -1,21 +1,80 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="container-bot">
+        <div class="container-top">
+            <div class="container">
+                <div class="wrapper">
+                    <article class="grid_8">
+                        <div class="indent-left">
+                            <h2>Carrosserie/Peinture</h2>
+                            <p class="prev-indent-bot">DB Auto Pneus vous propose la <strong>Carrosserie</strong> de vos voitures accidentées, vandalisées, rayées, bossolées, notre carrossier démontera les éléments endommagés, il va remetre en forme ceux qui sont réparables et remplacera ceux qui sont irrécupérables. </p>
+                            <p class="border-bot">Notre peintre en carrosserie prend ensuite le relais. Il prépare le véhicule en améliorant la qualité de la surface (masticage, ponçage...); puis la peinture en recherchant la teinte à l’aide du nuancier. Enfin, après avoir protégé les parties intactes, il peut appliquer la peinture au pistolet, effectuer les retouches et les finitions.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
     {% for bodyWork in bodyWorks %}
         <h3>{{ bodyWork.name }}</h3>
         <p>{{ bodyWork.description }}</p>
         <div>
-            Avant
-            {% for imageBefore in bodyWork.befores %}
-                <img src="{{ asset(imageBefore.pathImage) }}" width="100"/>
-            {% endfor %}
+            <h6>Avant</h6>
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <ul class="items">
+                        {% for imageBefore in bodyWork.befores %}
+                            <li> <img src="{{ asset(imageBefore.pathImage) }}"/> </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
         <div>
-            Après 
-            {% for imageAfter in bodyWork.afters %}
-                <img src="{{ asset(imageAfter.pathImage) }}" width="100"/>
-            {% endfor %}
+        <h6>Après</h6>
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <ul class="items">
+                        {% for imageAfter in bodyWork.afters %}
+                            <li> <img src="{{ asset(imageAfter.pathImage) }}"/> </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
-
     {% endfor %}
+    <div class="container-bot">
+        <div class="container-top">
+            <div class="container">
+                <div class="wrapper">
+                    <article class="grid_8">
+                        <div class="indent-left">
+                            <h2>Informations</h2>
+                            <p class="prev-indent-bot">DB Auto pneus Saint-Savournin offre pour toutes préstations de carrosserie la franchise de votre assureur ainsi qu'un nettoyage complet de votre vehicule.</p>
+                            <p class="border-bot">Vous souhaitez un devis? Une information supplémentaire ? N'hesitez pas à contacter notre garage qui ce fera un plaisir de vous renseignez.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.slider')._TMS({
+                duration: 1000,
+                easing: 'easeOutQuint',
+                preset: 'simpleFade',
+                slideshow: 7000,
+                banners: false,
+                pauseOnHover: true,
+                pagination: false,
+                pagNums: false,
+                nextBu: '.next',
+                prevBu: '.prev'
+            });
+        });
+    </script>
 {% endblock %}
