@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Mecanique</h2>
+    <div>
+        <p>BLABLABLA</p>
+    </div>
+    {% if mecanics_folio|length > 0 %}
+        <h2>PortFolio</h2>
+        <div>
+            {% for mecanicFolio in mecanics_folio %}
+                <h3>{{ mecanicFolio.name }} </h3>
+                <p>{{ mecanicFolio.description }}</p>
+                {% for image in mecanicFolio.images %}
+                    <img src="{{ asset(image.pathImage) }}" />
+                {% endfor %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

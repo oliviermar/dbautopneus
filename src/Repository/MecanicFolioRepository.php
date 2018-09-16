@@ -6,22 +6,22 @@ use Doctrine\ORM\EntityRepository;
 use App\Entity\BodyWorkFolio;
 
 /**
- * class BodyWorkFolioRepository
+ * Class MecanicFolioRepository
  *
  * @author Olivier Maréchal <o.marechal@icloud.com>
  */
-class BodyWorkFolioRepository extends EntityRepository
+class MecanicFolioRepository extends EntityRepository
 {
     /**
      * @param int $limit
      *
-     * @return BodyWorkFolio[]
+     * @return MecanicFolio[]
      */
     public function getLastWithLimit($limit)
     {
-        $qb = $this->createQueryBuilder('b');
+        $qb = $this->createQueryBuilder('m');
         $qb
-            ->join('b.befores', 'i')
+            ->join('m.images', 'i')
             ->setMaxResults($limit)
             ->orderBy('i.createdAt', 'ASC')
         ;
