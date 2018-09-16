@@ -48,11 +48,6 @@ class Promotion
     private $amount;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Option", inversedBy="promotions")
-     */
-    private $option;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $reprogrammation;
@@ -164,26 +159,6 @@ class Promotion
     public function setType($type)
     {
         $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * @return Option|null
-     */
-    public function getOption()
-    {
-        return $this->option;
-    }
-
-    /**
-     * @param Option $option
-     *
-     * @return Promotion
-     */
-    public function setOption(Option $option)
-    {
-        $this->option = $option;
 
         return $this;
     }

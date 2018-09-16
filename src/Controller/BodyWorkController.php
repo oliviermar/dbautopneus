@@ -10,7 +10,7 @@ use App\Entity\BodyWorkFolio;
 /**
  * Class BodyWorkController
  *
- * @author <o.marechal@icloud.com>
+ * @author Olivier Maréchal <o.marechal@icloud.com>
  */
 class BodyWorkController extends Controller
 {

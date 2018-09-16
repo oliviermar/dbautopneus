@@ -36,6 +36,11 @@ class Image
     /**
      * @ORM\Column(type="datetime")
      */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
     private $updatedAt;
 
     /**
@@ -52,6 +57,14 @@ class Image
      * @ORM\ManyToOne(targetEntity="MecanicFolio", inversedBy="images")
      */
     private $mecanic;
+
+    /**
+     * Image Constructor
+     */
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
 
     /**
      * Image ToString
@@ -116,6 +129,26 @@ class Image
     /**
      * @return \DateTime
      */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     *
+     * @return Image
+     */
+    public function setCreatedAt(\DateTime $createdAt = null)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
     public function getUpdatedAt()
     {
         return $this->updatedAt;
@@ -128,7 +161,7 @@ class Image
      */
     public function setUpdatedAt(\DateTime $updatedAt = null)
     {
-        $this->updatedAd = $updatedAt;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

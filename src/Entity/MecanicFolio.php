@@ -8,8 +8,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Class MecanicFolio
  *
+ * @ORM\Entity(repositoryClass="App\Repository\MecanicFolioRepository")
  * @author Olivier Maréchal <o.marechal@icloud.com>
- * @ORM\Entity
  */
 class MecanicFolio
 {

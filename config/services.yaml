@@ -33,3 +33,7 @@ services:
         arguments:
             $recipient: '%env(MAILER_RECIPIENT)%'
 
+    pagerfanta.view.default:
+        class: Pagerfanta\View\DefaultView
+        public: false
+        tags: [{ name: pagerfanta.view, alias: default }]
