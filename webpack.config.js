@@ -8,7 +8,6 @@ Encore
     // the public path used by the web server to access the previous directory
     .setPublicPath('/build')
 
-    .autoProvidejQuery()
     // will create public/build/app.js and public/build/app.css
     .addEntry('jquery', './assets/js/jquery-1.7.1.min.js')
     .addEntry('cufon-replace', './assets/js/cufon-replace.js')
@@ -21,6 +20,8 @@ Encore
     .addEntry('tms', './assets/js/tms-0.3.js')
     .addEntry('presets', './assets/js/tms_presets.js')
     .addEntry('jquery_easing', './assets/js/jquery.easing.1.3.js')
+    .addEntry('fancybox/js/fancybox', './assets/fancybox/dist/jquery.fancybox.js')
+    .addEntry('fancybox/css/fancybox', './assets/fancybox/dist/jquery.fancybox.css')
 
     // allow sass/scss files to be processed
     .enableSassLoader()
