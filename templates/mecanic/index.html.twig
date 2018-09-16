@@ -9,12 +9,9 @@
         <h2>PortFolio</h2>
         <div>
             {% for mecanicFolio in mecanics_folio %}
-                <h3>{{ mecanicFolio.name }} </h3>
-                <p>{{ mecanicFolio.description }}</p>
-                {% for image in mecanicFolio.images %}
-                    <img src="{{ asset(image.pathImage) }}" />
-                {% endfor %}
+                {% include 'mecanic/mecanic_card.html.twig' with {'mecanic': mecanicFolio} %}
             {% endfor %}
+            <a href="{{ path('mecanic_folio') }}">voir plus</a>
         </div>
     {% endif %}
 {% endblock %}

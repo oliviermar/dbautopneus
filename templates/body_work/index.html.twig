@@ -16,9 +16,12 @@
             </div>
         </div>
     </div>
+
     {% for bodyWork in bodyWorks %}
         {% include 'body_work/body_work_card.html.twig' with {'bodyWork': bodyWork} %}
     {% endfor %}
+    <a href="{{ path('bodywork_folio') }}">voir plus</a>
+
     <div class="container-bot">
         <div class="container-top">
             <div class="container">

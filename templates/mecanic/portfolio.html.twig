@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for mecanic in pager.currentPageResults %}
+        {% include 'mecanic/mecanic_card.html.twig' with {'mecanic': mecanic} %}
+    {% endfor %}
+
+    {% if pager.nbPages > 1 %}
+        {% for page in 1..pager.nbPages %}
+            {% if page == pager.currentPage %}
+                {{ page }}
+            {% else %}
+                <a href="{{ path('mecanic_folio', {'page': page }) }}">{{ page }}</a>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}
