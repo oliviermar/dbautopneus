@@ -18,6 +18,9 @@ Encore
     .addEntry('grid', './assets/css/grid.css')
     .addEntry('style', './assets/css/style.css')
     .addEntry('reset', './assets/css/reset.css')
+    .addEntry('tms', './assets/js/tms-0.3.js')
+    .addEntry('presets', './assets/js/tms_presets.js')
+    .addEntry('jquery_easing', './assets/js/jquery.easing.1.3.js')
 
     // allow sass/scss files to be processed
     .enableSassLoader()
