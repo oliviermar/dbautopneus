@@ -1,19 +1,21 @@
-<h3>{{ bodyWork.name }}</h3>
-<p>{{ bodyWork.description }}</p>
-<div>
+<div class="indent-left">
+    <h3>{{ bodyWork.name }}</h3>
+    <p>{{ bodyWork.description }}</p>
+    <div class="indent-left">
     <h6>Avant</h6>
-    <div>
-        {% for imageBefore in bodyWork.befores %}
-            <a class="fancybox" href="{{ asset(imageBefore.pathImage) }}" data-fancybox="before" /><img src="{{ asset(imageBefore.pathImage) }}" width="100"/></a>
-        {% endfor %}
+        <div>
+            {% for imageBefore in bodyWork.befores %}
+                <a class="fancybox" href="{{ asset(imageBefore.pathImage) }}" data-fancybox="before" /><img src="{{ asset(imageBefore.pathImage) }}" width="150"/></a>
+            {% endfor %}
+        </div>
     </div>
-</div>
-<div>
-<h6>Après</h6>
-    <div>
-        {% for imageAfter in bodyWork.afters %}
-            <a class="fancybox" href="{{ asset(imageAfter.pathImage) }}" data-fancybox="after" /><img src="{{ asset(imageAfter.pathImage) }}" width="100"/></a>
-        {% endfor %}
+    <div class="indent-left">
+        <h6>Après</h6>
+        <div>
+            {% for imageAfter in bodyWork.afters %}
+                <a class="fancybox" href="{{ asset(imageAfter.pathImage) }}" data-fancybox="after" /><img src="{{ asset(imageAfter.pathImage) }}" width="150"/></a>
+            {% endfor %}
+        </div>
     </div>
 </div>
 

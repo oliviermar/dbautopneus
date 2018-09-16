@@ -1,9 +1,9 @@
-<h3>{{ mecanic.name }}</h3>
-<p>{{ mecanic.description }}</p>
-<div>
-    <div>
+<div class="indent-left">
+	<h3>{{ mecanic.name }}</h3>
+	<p>{{ mecanic.description }}</p>
+	<div class="indent-left">
         {% for image in mecanic.images %}
-            <a class="fancybox" href="{{ asset(image.pathImage) }}" data-fancybox="mecanic" /><img src="{{ asset(image.pathImage) }}" width="100"/></a>
+            <a class="fancybox" href="{{ asset(image.pathImage) }}" data-fancybox="mecanic" /><img src="{{ asset(image.pathImage) }}" width="150"/></a>
         {% endfor %}
     </div>
 </div>

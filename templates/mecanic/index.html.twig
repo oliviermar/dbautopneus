@@ -1,17 +1,45 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h2>Mecanique</h2>
-    <div>
-        <p>BLABLABLA</p>
-    </div>
-    {% if mecanics_folio|length > 0 %}
-        <h2>PortFolio</h2>
-        <div>
-            {% for mecanicFolio in mecanics_folio %}
-                {% include 'mecanic/mecanic_card.html.twig' with {'mecanic': mecanicFolio} %}
-            {% endfor %}
-            <a href="{{ path('mecanic_folio') }}">voir plus</a>
+        <div class="container-bot">
+            <div class="container-top">
+                <div class="container">
+                    <div class="wrapper">
+                        <article class="grid_8">
+                            <div class="indent-left">
+                                <h2>Mécanique</h2>
+                                <p class="prev-indent-bot">DB Auto Pneus vous propose des préstations <strong>mécaniques</strong> Que vous ayez besoins d'une révisions intégrale, de changer la distribution, la boite de vitesse ou vos plaquettes, nous nous assurons de la qualité de notre travail. </p>
+                                <p class="border-bot">Mécanicien auto et moto depuis 2009 nous ne laissons aucune place à l'amateurisme. Nous pouvons vous conseillez sur les différentes réparations et entretiens à prévoir.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </div>
-    {% endif %}
+        <div>
+        {% if mecanics_folio|length > 0 %}
+            <h2>PortFolio</h2>
+            <div>
+                {% for mecanicFolio in mecanics_folio %}
+                    {% include 'mecanic/mecanic_card.html.twig' with {'mecanic': mecanicFolio} %}
+                {% endfor %}
+                <a href="{{ path('mecanic_folio') }}">voir plus</a>
+            </div>
+        {% endif %}
+        </div>
+        <div class="container-bot">
+            <div class="container-top">
+                <div class="container">
+                    <div class="wrapper">
+                        <article class="grid_8">
+                            <div class="indent-left">
+                                <h2>Informations</h2>
+                                <p class="prev-indent-bot">DB Auto pneus Saint-Savournin vous propose différents tarifs en fonction de la préstation souhaité. Vous pouvez retrouver <a href="{{path ('price') }}#mecanique">notre grille tarifaire sur le site.</a>notre grille tarifaire pour les préstations mécanique. Besoin de changer vos pneumatiques? <a href="{{path ('price') }}#pneus">Nos tarifs montage pneumatique sont disponible.</a> Vous trouverez aussi les liens vers les partenaires pour commander aux meilleures prix vos pneus.</p>
+                                <p class="border-bot">Vous souhaitez un devis? Une information supplémentaire ? N'hesitez pas à contacter notre garage qui ce fera un plaisir de vous renseignez.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}
