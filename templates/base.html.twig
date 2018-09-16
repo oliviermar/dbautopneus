@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="{{ asset('build/grid.css') }}">
         <link rel="stylesheet" href="{{ asset('build/style.css') }}">
         <link rel="stylesheet" href="{{ asset('build/reset.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/fancybox/css/fancybox.css') }}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -39,9 +40,15 @@
         <script src="{{ asset('build/jquery.js') }}"></script>
         <script src="{{ asset('build/contact.js') }}"></script>
         <script src="{{ asset('build/rating.js') }}"></script>
-        <script src="{{ asset('build/tms.js') }}"></script>
-        <script src="{{ asset('build/presets.js') }}"></script>
-        <script src="{{ asset('build/jquery_easing.js') }}"></script>
+        <script src="{{ asset('build/fancybox/js/fancybox.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                $('.fancybox').fancybox({
+                    loop: true,
+                    toolbar: true
+                });
+            });
+        </script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

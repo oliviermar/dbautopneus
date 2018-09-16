@@ -17,32 +17,7 @@
         </div>
     </div>
     {% for bodyWork in bodyWorks %}
-        <h3>{{ bodyWork.name }}</h3>
-        <p>{{ bodyWork.description }}</p>
-        <div>
-            <h6>Avant</h6>
-            <div class="slider-wrapper">
-                <div class="slider">
-                    <ul class="items">
-                        {% for imageBefore in bodyWork.befores %}
-                            <li> <img src="{{ asset(imageBefore.pathImage) }}"/> </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div>
-        <h6>Après</h6>
-            <div class="slider-wrapper">
-                <div class="slider">
-                    <ul class="items">
-                        {% for imageAfter in bodyWork.afters %}
-                            <li> <img src="{{ asset(imageAfter.pathImage) }}"/> </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
+        {% include 'body_work/body_work_card.html.twig' with {'bodyWork': bodyWork} %}
     {% endfor %}
     <div class="container-bot">
         <div class="container-top">
@@ -60,21 +35,4 @@
         </div>
     </div>
 {% endblock %}
-{% block javascripts %}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.slider')._TMS({
-                duration: 1000,
-                easing: 'easeOutQuint',
-                preset: 'simpleFade',
-                slideshow: 7000,
-                banners: false,
-                pauseOnHover: true,
-                pagination: false,
-                pagNums: false,
-                nextBu: '.next',
-                prevBu: '.prev'
-            });
-        });
-    </script>
-{% endblock %}
+    
