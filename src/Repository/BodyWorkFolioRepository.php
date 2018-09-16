@@ -28,4 +28,12 @@ class BodyWorkFolioRepository extends EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    /**
+     * @return QueryBuilder
+     */
+    public function getQueryAll()
+    {
+        return $this->createQueryBuilder('b');
+    }
 }

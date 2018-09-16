@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for bodyWork in pager.currentPageResults %}
+        {% include 'body_work/body_work_card.html.twig' with {'bodyWork': bodyWork} %}
+    {% endfor %}
+
+    {% if pager.nbPages > 1 %}
+        {% for page in 1..pager.nbPages %}
+            {% if page == pager.currentPage %}
+                {{ page }}
+            {% else %}
+                <a href="{{ path('bodywork_folio', {'page': page }) }}">{{ page }}</a>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\BodyWorkFolio;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 
 /**
  * Class BodyWorkController
@@ -22,5 +25,21 @@ class BodyWorkController extends Controller
         $bodyWorksFolio = $em->getRepository(BodyWorkFolio::class)->getLastWithLimit(3);
 
         return $this->render('body_work/index.html.twig', ['bodyWorks' => $bodyWorksFolio]);
+    }
+
+    /**
+     * @Route("/carrosserie/portfolio", name="bodywork_folio")
+     */
+    public function portfolioAction(Request $request, EntityManagerInterface $em)
+    {
+        $qb = $em->getRepository(BodyWorkFolio::class)->getQueryAll();
+        $adapter = new DoctrineORMAdapter($qb);
+        $pagerfanta = new Pagerfanta($adapter);
+        $pagerfanta->setMaxPerPage(10);
+        $pagerfanta->setCurrentPage($request->get('page', 1));
+
+        return $this->render('body_work/portfolio.html.twig', [
+            'pager' => $pagerfanta
+        ]);
     }
 }
