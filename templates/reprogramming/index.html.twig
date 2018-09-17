@@ -22,7 +22,6 @@
                             <ul class="list-2 p1">
                                 <li><a href="{{path ('price') }}#reprogrammation">Tarifs reprogrammation</a></li>
                             </ul>
-                            <img class="img-displayed" src="{{asset('/images/reprogrammation/repro1.jpg')}}" alt="reprogrammation" width="200" height="250">
                         </div>
                     </article>
                 </div>
@@ -70,15 +69,4 @@
         </div>
     </div>
     </section>
-    <h3>Choisissez votre marque</h3>
-    {% for brand in brands %}
-        <a href="{{ path('reprogramming_model', {'id': brand.id}) }}" class="col-1">
-            {% if brand.logoName is not null %}
-                <img src="{{ brand.pathLogo }}" width=75>
-            {% else %}
-                {{brand.name}}
-            {% endif %}
-        </a>
-        
-    {% endfor %}
 {% endblock %}
