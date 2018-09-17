@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Rate
@@ -21,6 +22,9 @@ class Rate
 
     /**
      * @ORM\Column(type="float", nullable=false)
+     * @Assert\NotNull(
+     *     message = "Veuillez renseigner ce champ"
+     * )
      */
     private $note;
 

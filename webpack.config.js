@@ -12,7 +12,7 @@ Encore
     .addEntry('jquery', './assets/js/jquery-1.7.1.min.js')
     .addEntry('cufon-replace', './assets/js/cufon-replace.js')
     .addEntry('contact', './assets/js/contact.js')
-    .addEntry('rating', './assets/js/contact.js')
+    .addEntry('rating', './assets/js/rating.js')
     .addEntry('cufon-yui', './assets/js/cufon-yui.js')
     .addEntry('grid', './assets/css/grid.css')
     .addEntry('style', './assets/css/style.css')

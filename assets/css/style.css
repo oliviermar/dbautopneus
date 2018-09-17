@@ -660,6 +660,7 @@ h1.bio-etha{
 /********* modal *****************/
 
 .modal {
+    z-index: 1;
     max-height: calc(100% - 100px);
     position: fixed;
     top: 50%;

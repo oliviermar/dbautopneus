@@ -114,7 +114,7 @@ class CoreController extends Controller
                 return new JsonResponse(
                     [
                         'success' => 'false',
-                        'form' => $this->get('templating')->render('rateing/form.html.twig',
+                        'form' => $this->get('templating')->render('rating/form.html.twig',
                             [
                                 'form' => $form->createView()
                             ]

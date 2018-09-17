@@ -1,4 +1,4 @@
-$(document).ready(function(e) {
+$(document).ready(function() {
     $('body').on('click', '[name="rating"]', function(e) {
         target = $(e.currentTarget);
         value = $(target).val();
@@ -11,15 +11,15 @@ $(document).ready(function(e) {
 
     $('#rate-form').on('submit', function(e) {
         e.preventDefault();
-        $form = $(this);
+        $form = $(e.currentTarget);
         $.ajax({
-            method: 'POST',
-            action: $form.attr('action'),
+            type: "POST",
+            url: $form.attr('action'),
             data: $form.serialize()
         })
         .done(function (data) {
             if (data.success == 'false') {
-                $('.rate-container').html(data.form);
+                errorModal();
             } else {
                 openModal();
                 cleanForm();
@@ -32,6 +32,12 @@ function openModal() {
     $('.modal').show();
     $('.title-modal').html('Merci');
     $('.content-modal').html('Votre évaluation a bien été enregistrer!');
+}
+
+function errorModal() {
+    $('.modal').show();
+    $('.title-modal').html('Erreur');
+    $('.content-modal').html('Vous devez attribuer une note!');
 }
 
 function cleanForm() {

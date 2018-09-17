@@ -1,14 +1,14 @@
-$('document').ready(function() {
+$(document).ready(function() {
     $('#contact-form').on('submit', function(e) {
         e.preventDefault();
-        form = $(e.currentTarget);
+        $form = $(e.currentTarget);
         $.ajax({
-            method: 'POST',
-            url: form.attr('action'),
-            data: form.serialize(),
+            type: "POST",
+            url: $form.attr('action'),
+            data: $form.serialize(),
         })
         .done(function (data) {
-            if (data.success == 'false') {        
+            if (data.success == 'false') {
                 $('.contact-container').html(data.form);
             } else {
                 openModal();
