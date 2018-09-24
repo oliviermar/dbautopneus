@@ -163,6 +163,7 @@ p {
 	float:right;
 	margin:0 0px 0px 40px;
 }
+
 .buttons a:hover {
 	cursor:pointer;
 }
@@ -171,9 +172,11 @@ p {
 }
 /*********************************header*************************************/
 header {
-	width:100%;
-	position:relative;
-	z-index:2;
+	width: 100%;
+	background:url(../images/logo1.png) center-top no-repeat;
+	height: auto;
+	display: block;
+
 }
 h1 {
     padding:45px 20px 37px 26px!important;
@@ -305,6 +308,12 @@ h3 {
 	color:#fff;
 	margin-bottom:2px;
 }
+.prestation {
+	font-size:25px;
+	line-height:2em;
+	color:#FFFF00;
+	margin-bottom:2px;
+}
 h3 strong {
 	display:block;
 	margin-top:-25px;
@@ -372,7 +381,7 @@ h6 {
 }
 .button:hover {
 	background:#fb4400;
-	color:#fff;
+	color:#FFFF00;
 }
 .list-1 li {
 	line-height:18px;
