@@ -24,24 +24,8 @@ class MecanicController extends Controller
     {
         return $this->render(
             'mecanic/index.html.twig', [
-                'mecanics_folio' => $em->getRepository(MecanicFolio::class)->getLastWithLimit(3)
+                'mecanics_folio' => $em->getRepository(MecanicFolio::class)->findAll()
             ]
         );
-    }
-
-    /**
-     * @Route("/mecanic/portfolio", name="mecanic_folio")
-     */
-    public function portfolioAction(Request $request, EntityManagerInterface $em)
-    {
-        $qb = $em->getRepository(MecanicFolio::class)->getQueryAll();
-        $adapter = new DoctrineORMAdapter($qb);
-        $pagerfanta = new Pagerfanta($adapter);
-        $pagerfanta->setMaxPerPage(1);
-        $pagerfanta->setCurrentPage($request->get('page', 1));
-
-        return $this->render('mecanic/portfolio.html.twig', [
-            'pager' => $pagerfanta
-        ]);
     }
 }

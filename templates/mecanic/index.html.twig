@@ -23,7 +23,6 @@
                 {% for mecanicFolio in mecanics_folio %}
                     {% include 'mecanic/mecanic_card.html.twig' with {'mecanic': mecanicFolio} %}
                 {% endfor %}
-                <a href="{{ path('mecanic_folio') }}">voir plus</a>
             </div>
         {% endif %}
         </div>
