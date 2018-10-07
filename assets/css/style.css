@@ -454,7 +454,8 @@ dl.main-address span {
 }
 .price-list td {
 	border:1px solid #343434;
-	line-height:39px;
+	line-height:30px;
+	text-align: center;
 }
 .price-list thead td {
 	width:139px;
@@ -468,8 +469,6 @@ dl.main-address span {
 .price-list tbody td:first-child {
 	color:#fff;
 	font-weight:bold;
-	text-align:left;
-	text-indent:19px;
 }
 .price-list tbody td {
 	text-align:center;
