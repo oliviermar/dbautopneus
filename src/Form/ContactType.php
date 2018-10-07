@@ -21,18 +21,21 @@ class ContactType extends AbstractType
                 [
                     'label' => 'Email',
                     'attr' => ['class' => 'form-input'],
+                    'label_attr' => ['class' => 'form-label'],
                 ]
             )
             ->add('name', null,
                 [
                     'label' => 'Nom',
                     'attr' => ['class' => 'form-input'],
+                    'label_attr' => ['class' => 'form-label'],
                 ]
             )
             ->add('content', null,
                 [
                     'label' => 'Message',
                     'attr' => ['class' => 'form-input'],
+                    'label_attr' => ['class' => 'form-label'],
                     'required' => true,
                 ]
             )
@@ -40,6 +43,7 @@ class ContactType extends AbstractType
                 [
                     'label' => 'Tel',
                     'attr' => ['class' => 'form-input'],
+                    'label_attr' => ['class' => 'form-label'],
                     'required' => false,
                 ]
             )

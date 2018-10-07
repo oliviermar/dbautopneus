@@ -2,22 +2,22 @@
     <h3>Contactez-nous</h3>
     {{ form_start(form, {'attr': {'novalidate': 'novalidate', "id": "contact-form"}})}}
     <div class="clearfix">
-        <label class="form-label"> {{form_label(form.email)}}</label>
+        {{form_label(form.email)}}
         {{form_widget(form.email)}}
         <span class="forms-errors">{{form_errors(form.email)}}</span>
     </div>
     <div class="clearfix">
-        <label class="form-label"> {{form_label(form.name)}}</label>
+        {{form_label(form.name)}}
         {{form_widget(form.name)}}
         <span class="forms-errors">{{form_errors(form.name)}}</span>
     </div>
     <div class="clearfix">
-        <label class="form-label"> {{form_label(form.phone)}}</label>
+        {{form_label(form.phone)}}
         {{form_widget(form.phone)}}
         <span class="forms-errors">{{form_errors(form.phone)}}</span>
     </div>   
     <div class="clearfix">
-        <label class="form-label"> {{form_label(form.content)}}</label>
+        {{form_label(form.content)}}
         {{form_widget(form.content)}}
         <span class="forms-errors">{{form_errors(form.content)}}</span>
     </div>    

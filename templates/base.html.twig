@@ -7,13 +7,14 @@
         <link rel="stylesheet" href="{{ asset('build/style.css') }}">
         <link rel="stylesheet" href="{{ asset('build/reset.css') }}">
         <link rel="stylesheet" href="{{ asset('build/fancybox/css/fancybox.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         <div class="main-bg">
             <div class="bg">
                 <header>
-                    <img class="img-indent"><img src="images/logo1.png" alt="" style=width:100%></img>
+                    <img class="img-indent"><img src="{{ asset('images/logo1.png') }}" alt="" style=width:100%></img>
                     <div class="main">
                         {{ include('navbar.html.twig') }}
                     </div>
