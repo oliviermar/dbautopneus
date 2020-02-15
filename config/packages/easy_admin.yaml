@@ -14,7 +14,6 @@ easy_admin:
               - { property: 'type', type: 'choice', choices: [!php/const App\Entity\Promotion::TYPE_PERCENT, !php/const App\Entity\Promotion::TYPE_AMOUNT ], label: 'Type'}
               - { property: 'dateStart', label: 'Date de début'}
               - { property: 'dateEnd', label: 'Date de fin'}
-              - { property: 'option', label: 'Option concernée par la promotion'}
               - { property: 'reprogrammation', label: 'Promotion reprogrammation'}
           form:
             title: 'Promotion'
@@ -23,7 +22,6 @@ easy_admin:
               - { property: 'type', type: 'choice', choices: [!php/const App\Entity\Promotion::TYPE_PERCENT, !php/const App\Entity\Promotion::TYPE_AMOUNT ], label: 'Type'}
               - { property: 'dateStart', label: 'Date de début'}
               - { property: 'dateEnd', label: 'Date de fin'}
-              - { property: 'option', label: 'Option concernée par la promotion'}
 
         BodyWorkFolio:
           class: App\Entity\BodyWorkFolio
